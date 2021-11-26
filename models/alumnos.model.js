@@ -1,39 +1,39 @@
 const { Schema, model } = require('mongoose');
 
 const alumnoSchema = Schema({
-    nombre: {
+    plantel: {
         type: String,
-        required: [true, 'El nombre es necesario']
+        required: [true, 'El campo es obligatorio']
     },
-    apellidos: {
+    planDeEstudios: {
         type: String,
-        required: [true, 'El apellido es necesario'],
+        required: [true, 'El campo es obligatorio']
     },
-    genero: {
+    tematica: {
         type: String,
-        required: [true, 'El genero es necesario'],
+        required: [true, 'El campo es obligatorio']
     },
-    bachillerato: {
+    tema: {
         type: String,
-        required: [true, 'La escuela es necesaria']
+        required: [true, 'El campo es obligatorio']
     },
-    grado: {
+    poblacion: {
         type: String,
-        required: [true, 'El grado es necesario']
+        required: [true, 'El campo es obligatorio']
     },
-    grupo: {
+    descripcion: {
         type: String,
-        required: [true, 'El grupo es necesario']
+        required: [true, 'El campo es obligatorio']
+    },
+    requerimientos: {
+        type: String,
+        required: [true, 'El campo es obligatorio']
     },
     correo: {
         type: String,
         required: [true, 'El correo es necesario'],
         unique: true
-    },
-    google: {
-        type: Boolean,
-        default: false
-    },
+    }
 
 });
 

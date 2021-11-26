@@ -1,39 +1,42 @@
 const { Schema, model } = require('mongoose');
 
 const maestrosSchema = Schema({
-    numTrabajador: {
+    figura: {
         type: String,
-        required: [true, 'El numero de trabajador es necesario']
+        required: [true, 'El campo es obligatorio']
     },
-    nombre: {
+    plantel: {
         type: String,
-        required: [true, 'El nombre es necesario']
+        required: [true, 'El campo es obligatorio']
     },
-    apellidos: {
+    planDeEstudios: {
         type: String,
-        required: [true, 'El apellido es necesario'],
+        required: [true, 'El campo es obligatorio']
     },
-    dependencia: {
+    tematica: {
         type: String,
-        required: [true, 'La dependencia es necesario'],
+        required: [true, 'El campo es obligatorio']
     },
-    telefono: {
+    tema: {
         type: String,
-        required: [true, 'El teléfono es necesaria']
+        required: [true, 'El campo es obligatorio']
     },
-    gradoEstudios: {
+    poblacion: {
         type: String,
-        required: [true, 'El grado de estudios es necesario']
+        required: [true, 'El campo es obligatorio']
     },
-    ligasMeet: {
-        type: Array,
-        required: [true, 'Las ligas Meet son necesarias es necesario']
+    descripcion: {
+        type: String,
+        required: [true, 'El campo es obligatorio']
+    },
+    requerimientos: {
+        type: String,
+        required: [true, 'El campo es obligatorio']
     },
     correo: {
         type: String,
         required: [true, 'El correo es necesario'],
-        unique: true
-    },
+    }
 });
 
 

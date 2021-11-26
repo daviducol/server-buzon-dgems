@@ -8,10 +8,10 @@ class Server {
         this.app = express();
         this.port = process.env.PORT;
         this.paths = {
-            alumnos  : '/api/alumnos',
-            maestros : '/api/maestros',
-            citas    : '/api/citas',
-            correos  : '/api/correo'
+            alumnos: '/api/alumnos',
+            maestros: '/api/maestros',
+            citas: '/api/citas',
+            correos: '/api/correo'
         }
 
         this.conectarBD();

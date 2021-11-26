@@ -9,7 +9,7 @@ const {
     maestrosPut,
     maestrosDelete } = require('../controller/maestros.controller');
 
-const { existeEmailMaestro } = require('../helpers/db-validators');
+// const { existeEmailMaestro } = require('../helpers/db-validators');
 
 const { validarCamposMaestros } = require('../middlewares/validar-campos-alumnos');
 
@@ -17,15 +17,16 @@ const { validarCamposMaestros } = require('../middlewares/validar-campos-alumnos
 router.get('/', maestrosGet);
 
 router.post('/', [
-    check('nombre', 'El nombre es siempre obligatorio').not().isEmpty(),
-    check('apellidos', 'Los apellidos es siempre obligatorio').not().isEmpty(),
-    check('numTrabajador', 'El numero de trabajador es siempre obligatorio').not().isEmpty(),
-    check('dependencia', 'La dependencia siempre obligatorio').not().isEmpty(),
-    check('telefono', 'El teléfono es siempre obligatorio').not().isEmpty(),
-    check('gradoEstudios', 'El grado de estudios es siempre obligatorio').not().isEmpty(),
-    check('ligasMeet', 'Las ligas meet son siempre obligatorias').not().isEmpty(),
+    check('figura', 'La figura que desempeño es siempre obligatorio').not().isEmpty(),
+    check('plantel', 'El plantel es siempre obligatorio').not().isEmpty(),
+    check('planDeEstudios', 'El plan de estudios es siempre obligatorio').not().isEmpty(),
+    check('tematica', 'La tematica siempre obligatorio').not().isEmpty(),
+    check('tema', 'El tema es siempre obligatorio').not().isEmpty(),
+    check('poblacion', 'La población es siempre obligatorio').not().isEmpty(),
+    check('descripcion', 'Las descripción son siempre obligatorias').not().isEmpty(),
+    check('requerimientos', 'Los requerimientos son siempre obligatorias').not().isEmpty(),
     check('correo', 'El correo no es valido').isEmail(),
-    check('correo').custom(existeEmailMaestro),
+    // check('correo').custom(existeEmailMaestro),
     validarCamposMaestros
 ], maestrosPost);
 

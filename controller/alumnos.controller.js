@@ -12,35 +12,35 @@ const alumnosGet = async (req = request, res = response) => {
     })
 };
 
-const emailExiste = async (req = request, res = response) => {
-    const { correo } = req.query;
-    const exiteEmial = await Alumnos.findOne({ correo });
-    if (exiteEmial) {
-        const { nombre, apellidos, bachillerato, correo: email, grado, grupo } = exiteEmial;
-        return res.json({
-            err: true,
-            msg: 'Email existe',
-            estudiante: {
-                nombre,
-                apellidos,
-                bachillerato,
-                email,
-                grado,
-                grupo
-            }
-        })
-    }
-    res.json({
-        err: false,
-        msg: 'Email no existe'
-    })
-
-}
+// const emailExiste = async (req = request, res = response) => {
+//     const { correo } = req.query;
+//     const exiteEmial = await Alumnos.findOne({ correo });
+//     if (exiteEmial) {
+//         const { nombre, apellidos, bachillerato, correo: email, grado, grupo } = exiteEmial;
+//         return res.json({
+//             err: true,
+//             msg: 'Email existe',
+//             estudiante: {
+//                 nombre,
+//                 apellidos,
+//                 bachillerato,
+//                 email,
+//                 grado,
+//                 grupo
+//             }
+//         })
+//     }
+//     res.json({
+//         err: false,
+//         msg: 'Email no existe'
+//     })
+// }
 
 const alumnosPost = async (req = request, res = response) => {
+    console.log('Ingreso al POST');
 
-    const { nombre, apellidos, bachillerato, genero, correo, grado, grupo, google } = req.body;
-    const alumno = new Alumnos({ nombre, apellidos, genero, bachillerato, correo, grado, grupo, google });
+    const { plantel, planDeEstudios, tematica, tema, poblacion, descripcion, requerimientos, correo } = req.body;
+    const alumno = new Alumnos({ plantel, planDeEstudios, tematica, tema, poblacion, descripcion, requerimientos, correo });
 
 
     await alumno.save() // guardar
@@ -63,7 +63,7 @@ const alumnosDelete = (req, res = response) => {
 
 module.exports = {
     alumnosGet,
-    emailExiste,
+    // emailExiste,
     alumnosPost,
     alumnosPut,
     alumnosDelete

@@ -14,14 +14,14 @@ const maestrosGet = async (req = request, res = response) => {
 
 const maestrosPost = async (req = request, res = response) => {
 
-    const { nombre, apellidos, numTrabajador, dependencia, telefono, gradoEstudios, ligasMeet, correo } = req.body;
-    const maestro = new Maestros({ nombre, apellidos, numTrabajador, dependencia, telefono, gradoEstudios, ligasMeet, correo });
+    const { figura, plantel, planDeEstudios, tematica, tema, poblacion, descripcion, requerimientos, correo } = req.body;
+    const maestro = new Maestros({ figura, plantel, planDeEstudios, tematica, tema, poblacion, descripcion, requerimientos, correo });
 
 
     await maestro.save() // guardar
     res.json({
         ok: true,
-        msg:'Registro almacenado',
+        msg: 'Registro almacenado',
         maestro
     })
 }
